@@ -1,0 +1,879 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    background: none;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e9e5e5;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+h1 {
+    font-family: 'Times New Roman', Times, serif, sans-serif; /* Police moderne et lisible */
+    font-size: 2.5rem; /* Taille de texte adaptée à un titre */
+    font-weight: bold; /* Gras pour une emphase sur le titre */ /* Couleur texte: gris foncé pour une bonne lisibilité */
+    text-align: center; /* Centre le texte */
+    margin: 20px 0; /* Espacement autour du titre */
+    letter-spacing: 1px; /* Espace les lettres pour une meilleure lisibilité */
+    color: #fff;
+   
+}
+
+h1:hover {
+    transform: scale(1.05); /* Légère animation de zoom sur hover */
+}
+
+
+p {
+    line-height: 1.6;
+    margin: 10px 0;
+    color: black;
+}
+
+.highlight {
+    color: #f92d2d;
+    font-weight: bold;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cta a {
+    text-decoration: none;
+    color: black;
+    background-color: #2a9df4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.cta a:hover {
+    background-color: #1e7acb;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke; /* Couleur de fond de la navbar */
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
+    border-radius: 15px;
+    color: black;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%; /* Forme ronde pour le logo */
+}
+
+.c-text{
+    line-height: 1.6;
+    margin: 10px 0;
+    color: black;
+}
+.navbar-brand span {
+    color: black;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Menu toggle (pour mobiles) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Menu de navigation */
+.navbar-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar-menu a:hover {
+    color: #fff;
+    background-color: #32cd32; /* Vert clair pour le hover */
+}
+
+/* Styles pour mobiles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: whitesmoke;
+    }
+
+    .navbar-menu a {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #444;
+    }
+
+    .navbar-menu a:hover {
+        background-color: #32cd32;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+}
+#ttc {
+    display: block; /* Pour enlever les marges blanches autour de l'image */
+    max-width: 100%; /* L'image ne dépassera jamais la largeur de son conteneur */
+    height: auto; /* Maintient le ratio d'aspect de l'image */
+    border-radius: 15px; /* Ajoute des coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre portée pour un effet 3D */
+    margin: 20px auto; /* Centre l'image horizontalement et ajoute un espacement en haut et en bas */
+    transition: transform 0.3s ease-in-out; /* Transition pour un effet d'animation */
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color:whitesmoke; /* Couleur de fond du footer */
+    padding: 40px 20px;
+    color: black;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    flex: 1;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 50%; /* Forme ronde pour le logo */
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: black;
+}
+
+.footer-links {
+    flex: 2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: #32cd32; /* Vert clair pour le hover */
+}
+
+.footer-social {
+    flex: 1;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    height: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Zoom sur le logo au survol */
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-brand,
+    .footer-links,
+    .footer-social {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-social {
+        margin-bottom: 0;
+    }
+}
+
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem; /* Taille du texte */
+    font-weight: 700; /* Texte en gras */
+    color: #333; /* Couleur de base du texte */
+    position: relative; /* Nécessaire pour l'animation */
+    overflow: hidden; /* Cache la partie qui dépasse pour l'animation */
+    text-transform: uppercase; /* Texte en majuscules */
+    letter-spacing: 2px; /* Espacement entre les lettres */
+    padding: 10px;
+    background-color: #f0f0f0; /* Fond légèrement gris pour contraste */
+    border-radius: 5px; /* Coins arrondis */
+    text-align: center; /* Centre le texte */
+}
+
+.card-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+    transform: skewX(-30deg);
+    transition: all 0.5s ease;
+}
+
+.card-title:hover::before {
+    left: 100%;
+}
+
+.card-title:hover {
+    color: #32cd32; /* Change la couleur du texte au survol (ici, vert clair) */
+}
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante si nécessaire */
+    justify-content: center; /* Centre les cartes horizontalement */
+    gap: 20px; /* Espace entre les cartes */
+}
+
+.card-row .col {
+    flex: 1 1 300px; /* Fixe la largeur des cartes à 300px, mais permet de se réduire si nécessaire */
+    max-width: 300px; /* Largeur maximale des cartes */
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    height: 100%; /* Les cartes prennent toute la hauteur disponible */
+    display: flex;
+    flex-direction: column; /* Assure que le contenu de la carte est verticalement aligné */
+    justify-content: space-between; /* Égalise l'espace entre les éléments de la carte */
+}
+
+@media (max-width: 768px) {
+    .card-row {
+        flex-direction: column;
+        align-items: center; /* Centre les cartes en mode colonne */
+    }
+
+    .card-row .col {
+        max-width: 100%; /* Permet aux cartes d'utiliser toute la largeur de l'écran en mode mobile */
+    }
+}
+
+
+/* Container styling */
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px; /* Espacement entre les images */
+    margin-bottom: 20px;
+}
+
+/* Column styling */
+.col-4 {
+    flex: 1 1 calc(33.33% - 10px);
+    max-width: calc(33.33% - 10px);
+    box-sizing: border-box;
+}
+
+/* Image styling */
+.blkexpo {
+    width: 100%;
+    height: 250px; /* Hauteur fixe pour uniformiser les images */
+    object-fit: cover; /* Recadre l'image pour remplir l'espace */
+    border-radius: 10px; /* Arrondit les coins des images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation sur le survol */
+}
+
+/* Image hover effect */
+.blkexpo:hover {
+    transform: scale(1.05); /* Agrandit légèrement l'image */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ajoute une ombre pour un effet de profondeur */
+}
+.blkexpo {
+    /* Largeur de l'image par défaut */
+    width: 100%;
+
+    /* Hauteur automatique pour les petits écrans et hauteur fixe pour les grands écrans */
+    height: auto;
+
+    /* Bord arrondi, ombre portée et bordure */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid #ddd;
+
+    /* Pour centrer l'image horizontalement */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Media query pour les écrans de petite taille */
+@media (max-width: 768px) {
+    .blkexpo {
+        /* Hauteur automatique pour les petits écrans */
+        height: auto;
+    }
+}
+
+/* Media query pour les écrans de grande taille */
+@media (min-width: 992px) {
+    .blkexpo {
+        /* Largeur de l'image pour les grands écrans */
+        width: 100%;
+    }
+}
+/* Image title styling */
+.image-title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .col-4 {
+        flex: 1 1 calc(50% - 10px); /* Deux images par ligne sur tablettes */
+        max-width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 576px) {
+    .col-4 {
+        flex: 1 1 100%; /* Une image par ligne sur petits écrans */
+        max-width: 100%;
+    }
+}
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: whitesmoke;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.carousel-title {
+    flex: 0 0 30%;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.carousel-title h5 {
+    font-size: 2rem;
+    margin: 0;
+    color: green;
+}
+
+.carousel-content {
+    flex: 1;
+    padding-left: 20px;
+    border-left: 2px solid red;
+}
+
+.carousel-content p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.carousel-content .btn {
+    background-color: #007bff;
+    border-color: red;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-content .btn:hover {
+    background-color: blue;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .carousel-title {
+        padding-right: 0;
+        padding-bottom: 15px;
+    }
+
+    .carousel-content {
+        padding-left: 0;
+        border-left: none;
+    }
+}
+
+/* Contact Container Styling */
+.contact-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-form {
+    flex: 1;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.contact-form .submit-btn {
+    display: inline-block;
+
+    color: black;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: green;
+}
+
+.contact-form .form-message {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Map Styling */
+.contact-map {
+    flex: 1;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-map {
+        order: -1;
+    }
+}
+.download-container {
+    text-align: center;
+}
+
+/* Style du bouton de téléchargement */
+.download-button {
+    background-color: #4CAF50; /* Couleur de fond verte */
+    color: white; /* Couleur du texte */
+    padding: 15px 30px; /* Espacement intérieur */
+    border-radius: 50px; /* Bord arrondi */
+    text-decoration: none; /* Pas de soulignement */
+    font-size: 18px; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition fluide pour le hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre portée */
+}
+
+/* Style au survol du bouton */
+.download-button:hover {
+    background-color: #45a049; /* Couleur de fond légèrement plus sombre */
+    transform: scale(1.05); /* Légère augmentation de la taille */
+}
+
+/* Style au focus (pour l'accessibilité) */
+.download-button:focus {
+    outline: none; /* Supprime le contour par défaut */
+    box-shadow: 0 0 0 4px rgba(72, 187, 120, 0.5); /* Ajoute une ombre autour du bouton */
+}
+
+
+h2 {
+    text-align: center;
+    color: #f9532d;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+
+
+.contain {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.styled-table thead tr {
+    background-color: #b05f5f;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #b05f5f;
+}
+
+
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .styled-table thead {
+        display: none;
+    }
+
+    .styled-table, .styled-table tbody, .styled-table tr, .styled-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .styled-table tr {
+        margin-bottom: 15px;
+    }
+
+    .styled-table td {
+        text-align: left; /* Aligne le texte à gauche */
+        padding-left: 15px; /* Ajoute un espacement à gauche */
+        position: relative;
+    }
+
+    .styled-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+.team-member {
+    background-color: #b05f5f;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info {
+    padding: 0 15px;
+}
+
+.name {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.profession {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .team-member {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .name {
+        font-size: 1.3rem;
+    }
+
+    .profession {
+        font-size: 1rem;
+    }
+}
+
+
+.point-focal-container h2 {
+    text-align: center; /* Aligner le titre à gauche */
+    color: whitesmoke;
+    margin-bottom: 20px;
+}
+
+.focal-point {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    text-align: left; /* Aligner le contenu à gauche */
+}
+
+.focal-point:last-child {
+    border-bottom: none;
+}
+
+.focal-point p {
+    margin: 0;
+    font-size: 1.1rem;
+    text-align: left; /* Aligner le texte à gauche */
+}
+
+.focal-point a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-align: left; /* Aligner le lien à gauche */
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.focal-point a:hover .whatsapp-icon {
+    transform: scale(1.1);
+}
+
+.name {
+    font-weight: bold;
+    color: white;
+    text-align: left; /* Aligner le nom à gauche */
+}
+
+.location {
+    color: whitesmoke;
+    font-size: 0.9rem;
+    text-align: left; /* Aligner la localisation à gauche */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .point-focal-container {
+        padding: 15px;
+    }
+
+    .focal-point {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left; /* Aligner les éléments à gauche en responsive */
+    }
+
+    .focal-point a {
+        margin-top: 5px;
+    }
+
+    .whatsapp-icon {
+        margin-right: 5px;
+    }
+}

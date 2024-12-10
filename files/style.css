@@ -893,6 +893,8 @@ h2 {
 /* Section de la vidéo */
 .video-section {
     width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .video-content {

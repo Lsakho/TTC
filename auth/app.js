@@ -1,7 +1,18 @@
 import { auth } from "./firebase-config.js";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
 
-// Sign Up
+// Gestion des formulaires : Affichage
+document.getElementById("show-register-btn").addEventListener("click", () => {
+    document.getElementById("login-section").style.display = "none";
+    document.getElementById("register-section").style.display = "block";
+});
+
+document.getElementById("show-login-btn").addEventListener("click", () => {
+    document.getElementById("register-section").style.display = "none";
+    document.getElementById("login-section").style.display = "block";
+});
+
+// Inscription
 document.getElementById("register-btn").addEventListener("click", () => {
     const firstName = document.getElementById("register-first-name").value;
     const lastName = document.getElementById("register-last-name").value;
@@ -9,50 +20,34 @@ document.getElementById("register-btn").addEventListener("click", () => {
     const password = document.getElementById("register-password").value;
 
     createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            document.getElementById("message").textContent = "Compte créé avec succès !";
-            // Tu peux ajouter ici la logique pour gérer le nom et prénom, comme les sauvegarder dans Firestore
-        })
-        .catch((error) => {
-            let errorMessage;
-            switch (error.code) {
-                case "auth/email-already-in-use":
-                    errorMessage = "Cet email est déjà utilisé.";
-                    break;
-                case "auth/invalid-email":
-                    errorMessage = "Format d'email invalide.";
-                    break;
-                case "auth/weak-password":
-                    errorMessage = "Le mot de passe doit contenir au moins 6 caractères.";
-                    break;
-                default:
-                    errorMessage = error.message;
-            }
-            document.getElementById("message").textContent = errorMessage;
-        });
-});
+        .then(() => {
+            // Réinitialiser les champs
+            document.getElementById("register-first-name").value = "";
+            document.getElementById("register-last-name").value = "";
+            document.getElementById("register-email").value = "";
+            document.getElementById("register-password").value = "";
 
-// Login
-document.getElementById("login-btn").addEventListener("click", () => {
-    const email = document.getElementById("login-email").value;
-    const password = document.getElementById("login-password").value;
-
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            document.getElementById("message").textContent = "Connexion réussie !";
+            // Afficher un message de succès
+            document.getElementById("message").textContent = "Inscription réussie ! Veuillez vous connecter.";
+            document.getElementById("register-section").style.display = "none";
+            document.getElementById("login-section").style.display = "block";
         })
         .catch((error) => {
             document.getElementById("message").textContent = error.message;
         });
 });
 
-// Boutons pour changer de formulaire
-document.getElementById("show-register-btn").addEventListener("click", () => {
-    document.getElementById("login-section").style.display = "none"; // Masquer le formulaire de connexion
-    document.getElementById("register-section").style.display = "block"; // Afficher le formulaire d'inscription
-});
+// Connexion
+document.getElementById("login-btn").addEventListener("click", () => {
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
 
-document.getElementById("show-login-btn").addEventListener("click", () => {
-    document.getElementById("register-section").style.display = "none"; // Masquer le formulaire d'inscription
-    document.getElementById("login-section").style.display = "block"; // Afficher le formulaire de connexion
+    signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+            // Redirection après connexion
+            window.location.href = "eMembre.html";
+        })
+        .catch((error) => {
+            document.getElementById("message").textContent = "email ou mots de passe incorrect";
+        });
 });

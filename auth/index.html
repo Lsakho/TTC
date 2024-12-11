@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication</title>
+  <link rel="stylesheet" href="./slyles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+  <div id="auth-container" class="container mt-5">
+    <!-- Section Login -->
+    <div id="login-section">
+      <h2>Login</h2>
+      <input type="email" id="login-email" class="form-control mb-3" placeholder="Email">
+      <input type="password" id="login-password" class="form-control mb-3" placeholder="Password">
+      <button id="login-btn" class="btn btn-primary w-100 mb-3">Login</button>
+      <p class="text-center">Don't have an account? <button id="show-register-btn" class="btn btn-link">Sign Up</button></p>
+    </div>
+    
+    <!-- Section Register (Initially hidden) -->
+    <div id="register-section" style="display:none;">
+      <h2>Create an Account</h2>
+      <input type="text" id="register-first-name" class="form-control mb-3" placeholder="First Name">
+      <input type="text" id="register-last-name" class="form-control mb-3" placeholder="Last Name">
+      <input type="email" id="register-email" class="form-control mb-3" placeholder="Email">
+      <input type="password" id="register-password" class="form-control mb-3" placeholder="Password">
+      <button id="register-btn" class="btn btn-success w-100 mb-3">Sign Up</button>
+      <p class="text-center">Already have an account? <button id="show-login-btn" class="btn btn-link">Login</button></p>
+    </div>
+
+    <div id="message" class="text-center mt-3"></div>
+  </div>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>

@@ -923,30 +923,15 @@ h2 {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-
-.containerpdf {
-    width: 90%;
-    margin: 20px auto;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    color: #333;
-}
-
-.card-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #007bff;
-}
-
 .pdf-container {
     position: relative;
-    margin: 20px auto;
-    max-width: 1000px;
-    height: 800px;
+    width: 100%; /* S'adapte à la largeur de l'écran */
+    height: 100vh; /* Utilise la hauteur de l'écran disponible */
     overflow: hidden;
-    border: 2px solid #007bff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* Ajoute une bordure légère pour délimiter */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour un effet moderne */
 }
 
 .pdf-frame {
@@ -959,27 +944,33 @@ h2 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    background-color: #007bff;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
     cursor: pointer;
-    animation: move 2s infinite;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .right-arrow {
     right: 10px;
 }
 
-@keyframes move {
-    0%, 100% {
-        transform: translateY(-50%) translateX(0);
-    }
-    50% {
-        transform: translateY(-50%) translateX(10px);
+.left-arrow {
+    left: 10px;
+}
+
+@media (max-width: 768px) {
+    .pdf-container {
+        height: 70vh; /* Réduit la hauteur pour les écrans plus petits */
     }
 }

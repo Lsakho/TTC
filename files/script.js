@@ -64,3 +64,14 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         }, 3000);
     }, 500);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Affiche le popup après un délai (1 seconde ici)
+    setTimeout(() => {
+        document.getElementById("event-popup").classList.add("show");
+    }, 1000);
+});
+
+function closePopup() {
+    document.getElementById("event-popup").classList.remove("show");
+}
